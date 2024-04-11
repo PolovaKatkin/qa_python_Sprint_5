@@ -19,7 +19,7 @@ def driver():
 
 @pytest.fixture(scope='function')
 def log_in(driver):
-    driver.get(settings.URL + "/login")
+    driver.get(settings.URL + settings.LOGIN_PAGE)
     driver.find_element(*LoginLocators.LOGIN_EMAIL_INPUT).send_keys(*StellarBurgersTestData.AUTH_EMAIL)
     driver.find_element(*LoginLocators.LOGIN_PASSWORD_INPUT).send_keys(*StellarBurgersTestData.AUTH_PASSWORD)
     driver.find_element(*LoginLocators.LOGIN_SUBMIT).click()

@@ -11,7 +11,7 @@ class TestProfilePage:
     def test_go_to_constructor_page_click_on_the_button_constructor(self, driver, log_in, link):
         driver.find_element(*link).click()
 
-        assert driver.current_url == settings.URL + '/'
+        assert driver.current_url == settings.URL + settings.MAIN_PAGE
 
     # Выход из аккаунта по клику на "Выход" в личном кабинете
     def test_log_out_of_the_profile(self, driver, log_in):

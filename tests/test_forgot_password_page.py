@@ -8,7 +8,7 @@ from locators import LoginLocators, ConstructorLocators, ProfilePage, ForgotPass
 class TestForgotPasswordPage:
     # Вход через кнопку в форме восстановления пароля
     def test_log_in_by_click_on_link_in_forgot_password_page(self, driver):
-        driver.get(settings.URL + "/forgot-password")
+        driver.get(settings.URL + settings.FORGOT_PASSWORD_PAGE)
         driver.find_element(*ForgotPasswordLocators.LINK_TO_LOGIN_PAGE).click()
 
         WebDriverWait(driver, settings.MAX_WAIT_TIME).until(
@@ -22,4 +22,4 @@ class TestForgotPasswordPage:
         WebDriverWait(driver, settings.MAX_WAIT_TIME).until(
             EC.text_to_be_present_in_element(ProfilePage.LINK_PROFILE, "Профиль"))
 
-        assert driver.current_url == settings.URL + "/account/profile"
+        assert driver.current_url == settings.URL + settings.ACCOUNT_PROFILE_PAGE

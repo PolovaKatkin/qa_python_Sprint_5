@@ -25,13 +25,13 @@ class TestConstructorPage:
         WebDriverWait(driver, settings.MAX_WAIT_TIME).until(
             EC.text_to_be_present_in_element(ProfilePage.LINK_PROFILE, "Профиль"))
 
-        assert driver.current_url == settings.URL + "/account/profile"
+        assert driver.current_url == settings.URL + settings.ACCOUNT_PROFILE_PAGE
 
     # Переход в личный кабинет
     def test_go_to_personal_account_page(self, driver, log_in):
         driver.find_element(*ConstructorLocators.BUTTON_PERSONAL_ACCOUNT).click()
 
-        assert driver.current_url == settings.URL + '/account/profile'
+        assert driver.current_url == settings.URL + settings.ACCOUNT_PROFILE_PAGE
 
     # Переход к разделу Булки
     def test_go_to_section_rolls(self, driver):
